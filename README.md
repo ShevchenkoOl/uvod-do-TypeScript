@@ -28,8 +28,8 @@ Let's open the __js__ file:
 the contents of our __ts__ file were overwritten by our __js__ format.
 
 We can also monitor file changes in real time by running the command:
-```tsc test.ts -w``` or ```tsc test.ts -watch```
-
+```tsc test.ts -w``` or ```tsc test.ts -watch```.
+In order not to stop ```npm start``` execution every time, you can open ```tsc -w``` in a separate console.
 __Every time you save the file, it will be recompiled, if there is an error, you will immediately see it in the console.__
 ### Author
 This repository was created and maintained by [Oleksii Shevchenko](https://shevchenkool.github.io/portfolio/). Questions, suggestions and feedback can be directed to [email](uzlabini@gmail.com) or [linkedin profile](linkedin.com/in/oleksii-shevchenko-535ab61b8).
