@@ -1,8 +1,9 @@
 ### Installing and configuring the development environment:
 1. we will use [Node.js](https://nodejs.org/en/) to install and configure the development environment;
-2. install __TypeScript__ using __Node Package Manager (npm)__, which is automatically installed with Node.js: ```npm install -g typescript```.
+2. install __TypeScript__ using __Node Package Manager (npm)__, which is automatically installed with Node.js: ``` npm install -g typescript ```.
 This command installs TypeScript globally on your computer, allowing you to use it in any project;
-3. to work with TypeScript, I recommend using [Visual Studio Code (VS Code)](https://code.visualstudio.com/).
+3. after installation, you can check the TypeScript version and its functionality using: ``` tsc -v ```;
+4. to work with TypeScript, I recommend using [Visual Studio Code (VS Code)](https://code.visualstudio.com/).
 
 __Now we have everything we need to get started with TypeScript! You can create a new TypeScript file with the .ts extension and start writing code.__
 
