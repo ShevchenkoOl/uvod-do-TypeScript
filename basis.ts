@@ -240,3 +240,98 @@ let value: OneOrTwo;
 value = 1; // OK
 value = "red"; // OK
 value = 3; // Error: Type '3' is not assignable to type 'OneOrTwo'.
+
+
+
+
+// type и interface:
+// type и interface — оба способа описания структуры данных, но с некоторыми различиями:
+// - type используется для создания новых типов данных. Он может быть использован для объединения нескольких типов, создания алиасов для простых типов, а также для работы с **объединениями** (union) или **перечислениями** (tuples).
+  // type Point = { x: number; y: number }; // Описание объекта с x и y
+  // type Status = 'active' | 'inactive'; // Объединение (строки 'active' или 'inactive')
+  
+// - interface используется для описания структуры объекта, например, объектов с определёнными свойствами и методами. Основное отличие в том, что **`interface` можно расширять (extends)** и **объявлять несколько раз** (расширяя или изменяя).
+  // interface Point {
+  //   x: number;
+  //   y: number;
+  // }
+ 
+// Когда использовать:
+// - type удобен, когда тебе нужно создать более сложные типы (например, с объединениями или перечислениями).
+// - interface хорош для описания структуры объектов, и если ты планируешь расширять интерфейс в будущем.
+
+// extends используется, когда **класс или интерфейс наследуют** или **расширяют** другой интерфейс или класс. Это значит, что новый интерфейс или класс будет включать в себя все свойства и методы предыдущего.
+ // interface Shape {
+ //    color: string;
+ //  }
+
+ //  interface Circle extends Shape {
+ //    radius: number;
+ //  }
+// Здесь `Circle` расширяет `Shape` и добавляет новое свойство `radius`.
+
+class Animal {
+    sound(): void {
+      console.log("Some sound");
+    }
+  }
+
+  class Dog extends Animal {
+    sound(): void {
+      console.log("Bark");
+    }
+  }
+// Dog расширяет класс `Animal` и переопределяет метод `sound`.
+
+
+// implements используется, чтобы **класс реализовывал интерфейс**. Это означает, что класс должен иметь все методы и свойства, которые определены в интерфейсе.
+  interface Animal {
+    sound(): void;
+  }
+
+  class Dog implements Animal {
+    sound(): void {
+      console.log("Bark");
+    }
+  }
+// Здесь Dog реализует интерфейс Animal, то есть обязан предоставить метод `sound`.
+
+
+
+// class — это **шаблон для создания объектов** с определённой структурой. Класс может содержать **поля (переменные)** и **методы (функции)**.
+  class Car {
+    make: string;
+    model: string;
+
+    constructor(make: string, model: string) {
+      this.make = make;
+      this.model = model;
+    }
+
+    getInfo() {
+      return `${this.make} ${this.model}`;
+    }
+  }
+
+  const myCar = new Car("Toyota", "Corolla");
+  console.log(myCar.getInfo()); // Toyota Corolla
+
+
+
+  class Vehicle {
+    wheels: number;
+
+    constructor(wheels: number) {
+      this.wheels = wheels;
+    }
+  }
+
+  class Car extends Vehicle {
+    make: string;
+
+    constructor(wheels: number, make: string) {
+      super(wheels); // вызываем конструктор родительского класса
+      this.make = make;
+    }
+  }
+
