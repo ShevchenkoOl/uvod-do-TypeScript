@@ -133,6 +133,18 @@ const page2: newData = {
 
 
 
+// функція getPromise(), яка повертає проміс, в масив, що містить рядки та числа.
+function getPromise(): Promise<(string|number)[]> {
+    return new Promise((resolve) => {
+           resolve(['Text', 50]);
+  });
+}
+getPromise().then((data) => {
+  console.log(data);
+});
+
+
+
 
 
 
